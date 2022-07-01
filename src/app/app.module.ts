@@ -10,11 +10,21 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from 'src/environments/environment';
 import { CrudService } from './service/crud.service';
 import {FormsModule} from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CrudComponent } from './crud/crud.component';
+import { Route, RouterModule } from '@angular/router';
+
+const ROUTES: Route[] = [
+  { path: '', component: LoginComponent},
+  { path: 'home', component: CrudComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
-  
+    LoginComponent,
+    CrudComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +34,9 @@ import {FormsModule} from '@angular/forms';
     AngularFireStorageModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(ROUTES)
   ],
   providers: [CrudService],
   bootstrap: [AppComponent]
