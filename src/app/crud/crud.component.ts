@@ -86,5 +86,8 @@ export class CrudComponent implements OnInit {
     {
       this.crudservice.delete_employee(record_id);
     }
-
+    
+    signOut() {
+      this.crudservice.logout();
+    }
 }
