@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CrudComponent } from './crud/crud.component';
 import { Route, RouterModule } from '@angular/router';
+import { EmailComponent } from './email/email.component';
 
 const ROUTES: Route[] = [
   { path: '', component: LoginComponent},
@@ -25,6 +26,7 @@ const ROUTES: Route[] = [
     AppComponent,
     LoginComponent,
     CrudComponent,
+    EmailComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router} from '@angular/router';
+import { CrudService } from '../service/crud.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder,private router: Router) { }
+  constructor(private formBuilder: FormBuilder,private router: Router,private crudservice : CrudService) { }
   //Form Validables 
   registerForm:any =  FormGroup;
   submitted = false;
@@ -31,7 +32,6 @@ export class LoginComponent implements OnInit {
   
   }
 
-
     //login form
   ngOnInit(): void {
     //login form
@@ -46,5 +46,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['./home']);
 }
 
-
+loginGoogle() {
+  this.crudservice.googleLogin();
+}
 }
